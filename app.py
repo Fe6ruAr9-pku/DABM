@@ -17,7 +17,6 @@ st.set_page_config(
 )
 
 # 提高 Matplotlib 的清晰度 (Retina 屏优化)
-from IPython.display import set_matplotlib_formats
 # 对于 Streamlit，主要是调整 DPI
 plt.rcParams['figure.dpi'] = 300
 plt.rcParams['savefig.dpi'] = 300
