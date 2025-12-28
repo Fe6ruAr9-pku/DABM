@@ -16,6 +16,12 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# 提高 Matplotlib 的清晰度 (Retina 屏优化)
+from IPython.display import set_matplotlib_formats
+# 对于 Streamlit，主要是调整 DPI
+plt.rcParams['figure.dpi'] = 300
+plt.rcParams['savefig.dpi'] = 300
+
 # 注入自定义 CSS 以实现"Nature"风格排版
 st.markdown("""
 <style>
@@ -419,7 +425,7 @@ def update_simulation():
 
 def draw_plots():
     # 创建 Nature 风格的组合图
-    fig = plt.figure(figsize=(18, 6), constrained_layout=True)
+    fig = plt.figure(figsize=(18, 6), constrained_layout=True, dpi=300)
     gs = gridspec.GridSpec(1, 3, width_ratios=[1, 1, 1], figure=fig)
 
     # ---------------------------
